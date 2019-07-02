@@ -1,0 +1,53 @@
+<p-toast></p-toast>
+
+<div class="container">
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+        <div class="ui-g">
+
+            <div class="ui-g-12">
+              <h1>Biblioteca - {{editando?'Edicao de ': 'Cadastro '}} Livro</h1>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Título</label>
+              <input pInputText type="text" name="nome" [(ngModel)]="livro.titulo" #nome="ngModel" required minlength="3">
+
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Número de Exemplares</label>
+              <input pInputText type="text" name="nome" [(ngModel)]="livro.numExemplares" #nome="ngModel" required minlength="3">
+
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Área de Conhecimento</label>
+              <input pInputText type="text" name="nome" [(ngModel)]="livro.areaConhecimento" #nome="ngModel" required minlength="3">
+
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>localBiblioteca</label>
+              <input pInputText type="text" name="nome" [(ngModel)]="livro.localBiblioteca" #nome="ngModel" required minlength="3">
+
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+            </div>
+
+
+            <div class="ui-g-12">
+                <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
+                <button pButton type="button" label="Novo" class="ui-button-info" class=" boxButton" routerLink="/livros/novo"></button>
+                <a routerLink="/livros"> Voltar para a pesquisa</a>
+            </div>
+
+
+        </div>
+    </form>
+</div>
