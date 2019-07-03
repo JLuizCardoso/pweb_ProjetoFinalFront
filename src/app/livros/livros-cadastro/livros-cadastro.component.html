@@ -5,39 +5,39 @@
         <div class="ui-g">
 
             <div class="ui-g-12">
-              <h1>Biblioteca - {{editando?'Edicao de ': 'Cadastro '}} Livro</h1>
+              <h1>Biblioteca - {{editando?'Edicao de ': 'Cadastro de '}} Livros</h1>
             </div>
 
             <div class="ui-g-12 ui-md-9 ui-fluid">
               <label>Título</label>
-              <input pInputText type="text" name="nome" [(ngModel)]="livro.titulo" #nome="ngModel" required minlength="3">
+              <input pInputText type="text" name="titulo" [(ngModel)]="livro.titulo" #nome="ngModel" required minlength="3">
 
-                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
-                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+                <div *ngIf="titulo.hasError('required') && titulo.touched">Informe um nome</div>
+                <div *ngIf="titulo.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
             </div>
 
             <div class="ui-g-12 ui-md-9 ui-fluid">
               <label>Número de Exemplares</label>
-              <input pInputText type="text" name="nome" [(ngModel)]="livro.numExemplares" #nome="ngModel" required minlength="3">
+              <input pInputText type="text" name="num" [(ngModel)]="livro.numExemplares" #nome="ngModel" required minlength="3">
 
-                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
-                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+                <div *ngIf="num.hasError('required') && num.touched">Informe um nome</div>
+                <div *ngIf="num.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
             </div>
 
             <div class="ui-g-12 ui-md-9 ui-fluid">
               <label>Área de Conhecimento</label>
-              <input pInputText type="text" name="nome" [(ngModel)]="livro.areaConhecimento" #nome="ngModel" required minlength="3">
+              <input pInputText type="text" name="area" [(ngModel)]="livro.areaConhecimento" #nome="ngModel" required minlength="3">
 
-                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
-                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+                <div *ngIf="area.hasError('required') && area.touched">Informe um nome</div>
+                <div *ngIf="area.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
             </div>
 
             <div class="ui-g-12 ui-md-9 ui-fluid">
-              <label>localBiblioteca</label>
-              <input pInputText type="text" name="nome" [(ngModel)]="livro.localBiblioteca" #nome="ngModel" required minlength="3">
+              <label>Local na Biblioteca</label>
+              <input pInputText type="text" name="local" [(ngModel)]="livro.localBiblioteca" #nome="ngModel" required minlength="3">
 
-                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
-                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+                <div *ngIf="local.hasError('required') && local.touched">Informe um nome</div>
+                <div *ngIf="local.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
             </div>
 
 

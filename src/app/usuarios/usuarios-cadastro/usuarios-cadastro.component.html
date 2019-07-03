@@ -1,1 +1,67 @@
-<p>usuarios-cadastro works!</p>
+
+<p-toast></p-toast>
+
+<div class="container">
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+        <div class="ui-g">
+
+            <div class="ui-g-12">
+              <h1>Biblioteca - {{editando?'Edicao de ': 'Cadastro de '}} Usuários</h1>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Nome</label>
+              <input pInputText type="text" name="nome" [(ngModel)]="usuario.nome" #nome="ngModel" required minlength="3">
+
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Idade</label>
+              <input pInputText type="text" name="idade" [(ngModel)]="usuario.idade" #nome="ngModel" required minlength="3">
+
+                <div *ngIf="idade.hasError('required') && idade.touched">Informe um nome</div>
+                <div *ngIf="idade.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+            </div>
+
+
+            <div class="ui-g-7">
+              <div class="ui-g-1">
+                <label style="margin-left: 10px;">Sexo: </label>
+              </div>
+              <div class="ui-g-3">
+                <p-radioButton name="sexo" value="Masculino" [(ngModel)]="usuario.sexo"></p-radioButton>
+                <label style="margin-left: 10px;">Masculino </label>
+              </div>
+              <div class="ui-g-3">
+                <p-radioButton name="sexo" value="Feminino" [(ngModel)]="usuario.sexo"></p-radioButton>
+                <label style="margin-left: 10px;">Feminino</label>
+              </div>
+          </div>
+
+
+          <div class="ui-g-7">
+            <div class="ui-g-1">
+              <label style="margin-left: 10px;">Tipo: </label>
+            </div>
+            <div class="ui-g-3">
+              <p-radioButton name="tipo" value="Aluno" [(ngModel)]="usuario.tipo"></p-radioButton>
+              <label style="margin-left: 10px;">Aluno </label>
+            </div>
+            <div class="ui-g-3">
+              <p-radioButton name="tipo" value="Professor" [(ngModel)]="usuario.tipo"></p-radioButton>
+              <label style="margin-left: 10px;">Professor</label>
+            </div>
+        </div>
+
+            <div class="ui-g-12">
+                <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
+                <button pButton type="button" label="Novo" class="ui-button-info" class=" boxButton" routerLink="/usuarios/novo"></button>
+                <a routerLink="/usuarios"> Voltar para a pesquisa</a>
+            </div>
+
+
+        </div>
+    </form>
+</div>
