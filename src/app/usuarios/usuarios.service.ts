@@ -21,9 +21,9 @@ export class UsuariosService {
   pesquisar(filtro: any): Promise<any> {
 
     if(filtro.nome){
-      this.urlFiltro = 'http://localhost:8080/usuario/filtro?nome='+filtro.nome;
+      this.urlFiltro = 'http://localhost:8080/usuarios/filtro?nome='+filtro.nome;
     }else{
-      this.urlFiltro = 'http://localhost:8080/usuario';
+      this.urlFiltro = 'http://localhost:8080/usuarios';
     }
 
     return this.http.get<any>(this.urlFiltro).toPromise();

@@ -1,1 +1,56 @@
-<p>emprestimos-cadastro works!</p>
+<p-toast></p-toast>
+
+<div class="container">
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+        <div class="ui-g">
+
+            <div class="ui-g-12">
+              <h1>Biblioteca - {{editando?'Edicao de ': 'Cadastro de '}} Empréstimos</h1>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Usuário</label>
+              <p-dropdown [options]="usuarios"
+                [(ngModel)]="emprestimo.usuarios.id"
+                name="user" [filter]="true">
+              </p-dropdown>
+
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Livro 1</label>
+              <p-dropdown [options]="livros"
+                [(ngModel)]="emprestimo.livros.id"
+                name="livros" [filter]="true">
+              </p-dropdown>
+
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Livro 2</label>
+              <p-dropdown [options]="livros"
+                [(ngModel)]="emprestimo.livros.id"
+                name="livros" [filter]="true">
+              </p-dropdown>
+
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Livro 3</label>
+              <p-dropdown [options]="livros"
+                [(ngModel)]="emprestimo.livros.id"
+                name="livros" [filter]="true">
+              </p-dropdown>
+
+            </div>
+
+            <div class="ui-g-12">
+                <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
+                <button pButton type="button" label="Novo" class="ui-button-info" class=" boxButton" routerLink="/livros/novo"></button>
+                <a routerLink="/livros"> Voltar para a pesquisa</a>
+            </div>
+
+
+        </div>
+    </form>
+</div>
