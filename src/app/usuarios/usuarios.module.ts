@@ -7,6 +7,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { TooltipModule } from 'primeng/tooltip';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
+import {DropdownModule} from 'primeng/dropdown';
 
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -23,6 +24,7 @@ import { UsuariosPesquisaComponent } from './usuarios-pesquisa/usuarios-pesquisa
     TableModule,
     TooltipModule,
     InputTextModule,
+    DropdownModule,
     ToastModule,
     FormsModule,
     ConfirmDialogModule,
