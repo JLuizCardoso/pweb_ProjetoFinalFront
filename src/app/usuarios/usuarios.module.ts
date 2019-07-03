@@ -30,10 +30,12 @@ import { UsuariosPesquisaComponent } from './usuarios-pesquisa/usuarios-pesquisa
     RadioButtonModule
   ],
   exports:[
-    UsuariosCadastroComponent
+    UsuariosCadastroComponent,
+    UsuariosPesquisaComponent
   ],
   providers:[
-    MessageService
+    MessageService,
+    UsuariosModule
   ]
 })
 export class UsuariosModule { }
